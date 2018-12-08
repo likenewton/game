@@ -1,0 +1,30 @@
+$borderColor: #e7e7e7;
+
+body {
+  background-color: #f1f1f1;
+}
+
+.game-wrapper {
+  display: flex;
+  width: 100%;
+  margin: 150px auto;
+  align-items: center;
+  justify-content: center;
+
+  .rows {
+    border: 1px solid #666;
+  }
+
+  ul {
+    background-color: #fff;
+    font-size: 0;
+
+    li {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+}

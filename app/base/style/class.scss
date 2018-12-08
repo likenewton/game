@@ -1,0 +1,175 @@
+
+
+.pointer {
+    cursor: pointer;
+}
+
+.hide {
+    display: none !important;
+}
+
+.center {
+    text-align: center;
+}
+
+.fbs-left {
+    float: left;
+}
+
+.fbs-right {
+    display: block;
+    overflow: hidden;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.clearfix::before,
+.clearfix::after {
+    line-height: 0;
+
+    display: block;
+    visibility: hidden;
+    clear: both;
+
+    height: 0;
+
+    content: '';
+}
+
+.ellipsis {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ellipsis_2 {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.ellipsis_3 {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+
+
+.css-decoration {
+    width: 100%;
+    height: 0.2rem;
+}
+
+.css-decoration_x2 {
+    width: 100%;
+    height: 0.4rem;
+}
+
+// ========= sui =============
+
+.sui-btn {
+    font-size: 12px;
+    line-height: 18px;
+
+    display: inline-block;
+
+    box-sizing: border-box;
+    margin-bottom: 0;
+    padding: 2px 14px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    vertical-align: middle;
+
+    color: #333;
+    border: 1px solid #e1e1e1;
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+            border-radius: 2px;
+    background-color: #eee;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+         -o-user-select: none;
+    &:hover {
+        color: #333;
+        border: 1px solid #eaeaea;
+        background-color: #f7f7f7;
+    }
+}
+
+.btn-primary {
+    color: #fff;
+    border: 1px solid #1299ec;
+    background-color: #28a3ef;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+.btn-primary:hover {
+    color: #fff;
+    border: 1px solid #33affc;
+    background-color: #4cb9fc;
+}
+
+.btn-large {
+    font-size: 14px;
+    line-height: 22px;
+
+    padding: 2px 14px;
+}
+
+
+
+// ===== scroll bar ======
+
+/*滚动条样式*/
+.small-scroll::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 12px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 12px;
+}
+.small-scroll::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 1;  
+    background: rgba(0, 0, 0, 0.3);
+}
+.small-scroll::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    border-radius: 0;
+    background: #c1c1c1;
+}
+
+
+// ============== 版心 ================
+.module-core {
+    position: relative; 
+    width: 1176px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+@media screen and (min-width:1024px) and (max-width:1279px) {
+    .module-core {
+        width: 950px;
+    }
+}
+
+@media screen and (max-width:1023px) {
+    .module-core {
+        width: 100%;
+        margin: 0 auto;
+    }
+}

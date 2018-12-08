@@ -1,0 +1,127 @@
+$borderColor: #ccc;
+
+// ========= 移动端1px 边框 =========
+/*手机端实现真正的一像素边框*/
+.border-1px,
+.border-bottom-1px,
+.border-top-1px,
+.border-left-1px,
+.border-right-1px {
+    position: relative;
+}
+
+/*底边边框一像素*/
+.border-bottom-1px::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    content: '';
+    background: $borderColor;
+    transform-origin: 0 0;
+}
+
+/*上边边框一像素*/
+.border-top-1px::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+    background: $borderColor;
+    content: '';
+    transform-origin: 0 0;
+}
+
+/*左边边框一像素*/
+.border-left-1px::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: $borderColor;
+    content: '';
+    transform-origin: 0 0;
+}
+
+/*右边边框1像素*/
+.border-right-1px::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    width: 1px;
+    height: 100%;
+    content: '';
+    background: $borderColor;
+    transform-origin: 0 0;
+}
+
+/*边框一像素*/
+.border-1px::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    content: '';
+    border: 1px solid $borderColor;
+}
+
+@mixin border-color($color) {
+    .border-right-1px, .border-left-1px, .border-top-1px, .border-bottom-1px {
+        &::after {
+            background: $color;
+        }
+    }
+    .border-1px {
+        &::after {
+            border: 1px solid $color;
+        }
+    }
+}
+
+/*设备像素比*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2.0), only screen and (min-resolution: 2dppx) {
+    .border-bottom-1px::after,
+    .border-top-1px::after {
+        transform: scaleY(.5);
+    }
+
+    .border-left-1px::after,
+    .border-right-1px::after {
+        transform: scaleX(.5);
+    }
+    .border-1px::after {
+        width: 200%;
+        height: 200%;
+
+        transform: scale(.5);
+        transform-origin: 0 0;
+    }
+}
+
+/*设备像素比*/
+@media only screen and (-webkit-min-device-pixel-ratio: 3.0), only screen and (min-resolution: 3dppx) {
+    .border-bottom-1px::after,
+    .border-top-1px::after {
+        transform: scaleY(.333);
+    }
+    .border-left-1px::after,
+    .border-right-1px::after {
+        transform: scaleX(.333);
+    }
+    .border-1px::after {
+        width: 300%;
+        height: 300%;
+
+        transform: scale(.333);
+        transform-origin: 0 0;
+    }
+}
