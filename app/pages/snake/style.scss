@@ -7,7 +7,7 @@ body {
 .game-wrapper {
   display: flex;
   width: 100%;
-  margin: 150px auto;
+  margin: 1.5rem auto;
   align-items: center;
   justify-content: center;
 
@@ -21,8 +21,8 @@ body {
 
     li {
       display: inline-block;
-      width: 15px;
-      height: 15px;
+      width: 0.15rem;
+      height: 0.15rem;
       font-size: 12px;
       text-align: center;
     }
