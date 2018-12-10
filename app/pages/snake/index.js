@@ -31,24 +31,25 @@ class Game {
   }
 
   initEvent() {
-    $(document).keypress((event) => {
-      const code = event.keyCode
-      const direction = this.data.direction
+    $(document).keypress((e) => {
+
+      const [code, direction] = [e.keyCode, this.data.direction]
 
       clearInterval(this.Timer);
-      if (code == 115 && direction != "UP") {
+
+      if (code == 115 && direction !== "UP") {
         this.fn.toDown();
         this.Timer = setInterval(this.fn.toDown.bind(this.fn), this.data.speed);
       }
-      if (code == 100 && direction != "LEFT") {
+      if (code == 100 && direction !== "LEFT") {
         this.fn.toRight();
         this.Timer = setInterval(this.fn.toRight.bind(this.fn), this.data.speed);
       }
-      if (code == 119 && direction != "DOWN") {
+      if (code == 119 && direction !== "DOWN") {
         this.fn.toUp();
         this.Timer = setInterval(this.fn.toUp.bind(this.fn), this.data.speed);
       }
-      if (code == 97 && direction != "RIGHT") {
+      if (code == 97 && direction !== "RIGHT") {
         this.fn.toLeft();
         this.Timer = setInterval(this.fn.toLeft.bind(this.fn), this.data.speed);
       }
@@ -76,6 +77,7 @@ class Game {
   }
 
   _fn() {
+    // 这样会形成一个闭包，对性能影响较大
     let _this = this;
 
     this.fn = {
@@ -188,8 +190,7 @@ class Game {
       },
       // 获取食物的坐标
       getFoodLocation() {
-        let totalPixel = _this.pixel_w * _this.pixel_h
-        let foodLocation = Math.ceil(Math.random() * totalPixel)
+        let foodLocation = Math.ceil(Math.random() * _this.pixel_w * _this.pixel_h)
 
         // 确保食物不能出现在snake之中
         if (_this.data.snake.includes(foodLocation)) {

@@ -7,6 +7,7 @@ body {
 h1.module-core {
   text-align: center;
   margin-top: 0.5rem;
+
   font: {
     size: 34px;
     weight: bold;
@@ -30,10 +31,15 @@ h1.module-core {
 
     li {
       display: inline-block;
-      width: 0.15rem;
-      height: 0.15rem;
+      width: 0.25rem;
+      height: 0.25rem;
       font-size: 12px;
       text-align: center;
+      box-sizing: border-box;
+
+      &.active {
+        background: blue;
+      }
     }
   }
 }
