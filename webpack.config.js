@@ -52,7 +52,7 @@ function getPlugins(viewPath) {
     minChunks: 2,
   })]
 
-  pluginMap = [...pluginMap, new ExtractTextPlugin('style/[name].[hash].css')]
+  pluginMap = [...pluginMap, new ExtractTextPlugin('[name].[hash].css')]
 
   return pluginMap;
 }
@@ -66,7 +66,7 @@ module.exports = {
   output: {
     path: __dirname + "/build",
     filename: 'js/[name].[hash].js',
-    publicPath: '/',
+    // publicPath: '/',
   },
 
   module: {

@@ -15,6 +15,8 @@ export default class Ajax {
       getBase: '/h5/agent/getbase', // 获取基本信息
       getInfos: '/h5/agent/getinfo', // 获取资料
       showList: '/h5/agent/showList', // 展示信息
+      getGameInfos: '/infos/getGameInfos', // 获取游戏信息
+      setScore: '/infos/setScore', // 设置分数
     }
 
     this.domain = {
@@ -23,6 +25,7 @@ export default class Ajax {
       test: 'http://test.api.msdk.51738.com',
       pre: 'http://pre-apimsdk.wcsdk.poker3a.com',
       product: 'https://apimsdk.wcsdk.poker3a.com',
+      games: 'http://192.168.50.120:4400',
     }
 
     this.setData(param);
@@ -55,6 +58,7 @@ export default class Ajax {
       delete deepCopy[arr[i]]
     }
 
+    console.log(`${_this.domain[_this.data.domain]}${paraObj.URL}`)
     $.ajax({
       url: `${_this.domain[_this.data.domain]}${paraObj.URL}`,
       type: paraObj.TYPE || 'POST',
