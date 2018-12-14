@@ -2,37 +2,46 @@
 <html lang="en">
 
 <head>
-    <title>Game</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="renderer" content="webkit">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="x5-orientation" content="portrait">
-    <meta name="browsermode" content="application">
-    <meta name="x5-page-mode" content="app">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no viewport-fit=cover">
-    <meta name="format-detection" content="telephone=no, email=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="x5-fullscreen" content="true" />
-    <meta name="full-screen" content="yes">
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_698169_6cx21tiozog.css">
+  <title>Game</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="renderer" content="webkit">
+  <meta name="screen-orientation" content="portrait">
+  <meta name="x5-orientation" content="portrait">
+  <meta name="browsermode" content="application">
+  <meta name="x5-page-mode" content="app">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="full-screen" content="yes">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_698169_6cx21tiozog.css">
 </head>
 
 <body class="">
-    <div class="page-container" style="position: relative;">
-        <div class="game-wrapper">
-            <!-- template inject -->
-        </div>
-
-        <div class="control hide">
-            <div class="btn up-btn">W</div>
-            <div class="btn left-btn">A</div>
-            <div class="btn right-btn">D</div>
-            <div class="btn down-btn">S</div>
-        </div>
+  <div class="page-container" style="position: relative;">
+    <div class="game-wrapper">
+      <!-- template inject -->
     </div>
+    <div class="scores">
+      <div class="highest-score" style="text-align: center;">
+        <span>最高得分：</span>
+        <span id="highest-score">0</span>
+      </div>
+      <div class="score" style="text-align: center;">
+        <span>当前得分：</span>
+        <span id="score">0</span>
+      </div>
+    </div>
+    <div class="control hide">
+      <div class="btn up-btn">W</div>
+      <div class="btn left-btn">A</div>
+      <div class="btn right-btn">D</div>
+      <div class="btn down-btn">S</div>
+    </div>
+  </div>
 </body>
 
 </html>

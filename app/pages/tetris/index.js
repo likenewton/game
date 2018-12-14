@@ -131,13 +131,14 @@ class Game {
     this.DomArray = this.fn.getDomArray() // 像素点dom
     this.fn.getNewBlock()
     this.fn.renderBlock()
-    // this.Timer = setInterval(this.fn.toDown.bind(this.fn), 300)
+    this.Timer = setInterval(this.fn.toDown.bind(this.fn), 300)
 
     ajax.comAjax({
       URL: ajax.urlData.getGameInfos + `?gameId=2&userId=${10001}`,
       TYPE: 'GET'
     }, (res) => {
-      console.log(res)
+      this.data.highestScore = res.data.highestScore
+      this.fn.renderScorePanel()
     })
 
   }
@@ -538,8 +539,12 @@ class Game {
             _this.TwoDiArray.unshift(deleteCols.map(v => v = 0))
           }
         })
-        _this.data.score += _this.data.singleScoreList[level]
+        if (level > 0) {
+          _this.data.score += _this.data.singleScoreList[level]
+          _this.data.highestScore = _this.data.score > _this.data.highestScore ? _this.data.score : _this.data.highestScore
+        }
         this.renderBackGround()
+        this.renderScorePanel()
       },
       // 判断是否已经死亡
       judgeDeath() {
@@ -558,6 +563,10 @@ class Game {
             })
           }
         })
+      },
+      renderScorePanel() {
+        $('#score').text(_this.data.score)
+        $('#highest-score').text(_this.data.highestScore)
       }
     }
   }
