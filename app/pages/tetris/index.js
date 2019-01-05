@@ -16,7 +16,7 @@ const ajax = Components.Ajax.render({
 })
 
 // ==== INIT ====
-class Game {
+class Tetris {
 
   constructor() {
     this._fn()
@@ -131,7 +131,7 @@ class Game {
     this.DomArray = this.fn.getDomArray() // 像素点dom
     this.fn.getNewBlock()
     this.fn.renderBlock()
-    this.Timer = setInterval(this.fn.toDown.bind(this.fn), 300)
+    // this.Timer = setInterval(this.fn.toDown.bind(this.fn), 300)
 
     ajax.comAjax({
       URL: ajax.urlData.getGameInfos + `?gameId=2&userId=${10001}`,
@@ -413,7 +413,7 @@ class Game {
           _this.curBlockPos.forEach((v) => {
             if (v[1] % _this.pixel_w === 0) {
               bool = false
-            } else if (_this.TwoDiArray[v[0]][v[1] - 1]) {
+            } else if (_this.TwoDiArray[v[0]][v[1] - step]) {
               bool = false
             }
           })
@@ -485,9 +485,8 @@ class Game {
       // 渲染当前的板块
       renderBlock() {
         if (_this.curBlockPos.length === 0) return
-        let DomArray = _this.DomArray
         _this.curBlockPos.forEach((v) => {
-          DomArray[v[0]][v[1]].style.backgroundColor = 'blue'
+          _this.DomArray[v[0]][v[1]].style.backgroundColor = 'blue'
         })
       },
       // 渲染面板
@@ -572,9 +571,9 @@ class Game {
   }
 
   static start() {
-    return new Game()
+    return new Tetris()
   }
 
 }
 
-Game.start()
+Tetris.start()
